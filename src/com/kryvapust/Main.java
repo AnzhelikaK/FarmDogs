@@ -18,7 +18,7 @@ import java.util.stream.Stream;
 public class Main {
 
     public static void main(String[] args) {
-        final int AMOUNT_DOGS=10;
+        final int AMOUNT_DOGS = 10;
         Collection<Dog> dogs = createDogs(AMOUNT_DOGS);
 
         TrainingGround trainingGround = new TrainingGround();
@@ -29,13 +29,13 @@ public class Main {
         Trainer trainer = new Trainer();
         Vet vet = new Vet();
 
-        FarmDogs farmDogs = new FarmDogs(aviaries,trainingGround, work,
+        FarmDogs farmDogs = new FarmDogs(aviaries, trainingGround, work,
                 cleaner, feeder, trainer, vet);
 
         farmDogs.acceptDogs(dogs);
 
         System.out.println("Dog's state in the beginning of day.");
-        dogs.forEach(Dog::state);
+        farmDogs.tellAboutDogsState();
 
         farmDogs.feed();
         farmDogs.doCheckup();
@@ -43,8 +43,8 @@ public class Main {
         farmDogs.clean();
         farmDogs.feed();
 
-        System.out.println(" Dog's state in the end of day.");
-        dogs.forEach(Dog::state);
+        System.out.println("Dog's state in the end of day.");
+        farmDogs.tellAboutDogsState();
     }
 
     private static Collection<Dog> createDogs(int amount) {

@@ -61,4 +61,9 @@ public class FarmDogs {
         aviaries.placeDogs();
         cleaner.startWork(aviaries.getTemporaryPlaceForDogs());
     }
+
+    public  void tellAboutDogsState(){
+        aviaries.getAllDogs().forEach(Dog::state);
+    }
+
 }

@@ -5,8 +5,9 @@ import com.kryvapust.Infrastructure.Food;
 
 import java.util.Collection;
 
-public class Feeder {
-    public void feed(Collection<Dog> dogs) {
+public class Feeder implements Employee {
+    @Override
+    public void startWork(Collection<Dog> dogs) {
         System.out.println("\t Feeding is got started.");
         for (Dog dog : dogs) {
             if (dog.isHungry()) {
@@ -20,11 +21,17 @@ public class Feeder {
                     case OLD:
                         dog.eat(Food.FOR_OLD);
                 }
-                dog.setHungry(true);
-            } else {
+                } else {
                 System.out.println(dog + " is not hungry");
             }
         }
         System.out.println("\t Feeding is finished.");
+    }
+
+    public static class Sorter implements Employee {
+        @Override
+        public void startWork(Collection<Dog> dogs) {
+
+        }
     }
 }

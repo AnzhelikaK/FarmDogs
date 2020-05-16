@@ -15,7 +15,7 @@ public class TrainingGround {
 
         trainer = tr;
         dogsForTraining.addAll(dogs);
-        trainer.train(dogsForTraining);
+        trainer.startWork(dogsForTraining);
 
         System.out.println("\t Dog's training is finished.");
     }

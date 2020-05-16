@@ -11,16 +11,16 @@ public class Dog {
     private boolean hungry = true;
     private boolean healthy;
     private static int count = 0;
+    private static final Random RANDOM = new Random();
 
     public Dog() {
-        this(new Random().nextInt(16));
+        this(RANDOM.nextInt(16));
     }
 
     public Dog(int age) {
         ++count;
-        Random random = new Random();
-        name = "dog" + count + (65 + random.nextInt(26));
-        setHealthy(random.nextBoolean());
+        name = "dog" + count + (char)(65 + RANDOM.nextInt(26));
+        setHealthy(RANDOM.nextBoolean());
         this.age = age;
     }
 
@@ -46,7 +46,7 @@ public class Dog {
         return hungry;
     }
 
-    public void setHungry(boolean hungry) {
+    private void setHungry(boolean hungry) {
         this.hungry = hungry;
     }
 
@@ -69,15 +69,15 @@ public class Dog {
 
     public void act(String activity) {
         System.out.println(toString() + "went to " + activity);
-        setHungry(false);
+        setHungry(RANDOM.nextBoolean());
     }
 
     public void state() {
         System.out.println(toString()
-                + " age: " + age
-                + " hungry: " + hungry
-                + " health: " + healthy
-                + " trained: " + isTrained());
+                + " Age: " + age
+                + " Hungry: " + hungry
+                + " Health: " + healthy
+                + " Trained: " + isTrained());
     }
 
     @Override

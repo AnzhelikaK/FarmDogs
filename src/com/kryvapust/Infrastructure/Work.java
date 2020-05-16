@@ -14,7 +14,7 @@ public class Work {
         workDogs.addAll(dogs);
         for (Dog dog : workDogs) {
             if (dog.getAge() < 6) {
-                dog.act(" work in police ");
+                dog.act(" work in police");
             } else dog.act(" work in MES");
         }
         System.out.println("\t Dog's work is finished.");

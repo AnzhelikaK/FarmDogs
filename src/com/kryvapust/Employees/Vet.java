@@ -5,8 +5,9 @@ import com.kryvapust.Dogs.Dog;
 import java.util.Collection;
 import java.util.Random;
 
-public class Vet {
-    public void doCheckup(Collection<Dog> dogs) {
+public class Vet implements Employee{
+    @Override
+    public void startWork(Collection<Dog> dogs) {
         System.out.println("\t Check-up is got started.");
         Random random = new Random();
         for (Dog dog : dogs) {

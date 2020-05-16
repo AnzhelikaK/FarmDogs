@@ -28,10 +28,4 @@ public class Feeder implements Employee {
         System.out.println("\t Feeding is finished.");
     }
 
-    public static class Sorter implements Employee {
-        @Override
-        public void startWork(Collection<Dog> dogs) {
-
-        }
-    }
 }

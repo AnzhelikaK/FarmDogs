@@ -34,7 +34,7 @@ public class Main {
 
         farmDogs.acceptDogs(dogs);
 
-        System.out.println(" Dog's state in the beginning of day.");
+        System.out.println("Dog's state in the beginning of day.");
         dogs.forEach(Dog::state);
 
         farmDogs.feed();

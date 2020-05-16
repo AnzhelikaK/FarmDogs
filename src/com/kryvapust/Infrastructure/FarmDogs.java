@@ -1,26 +1,19 @@
 package com.kryvapust.Infrastructure;
 
 import com.kryvapust.Dogs.Dog;
-import com.kryvapust.Dogs.TypesOfDog;
 import com.kryvapust.Employees.Cleaner;
 import com.kryvapust.Employees.Feeder;
 import com.kryvapust.Employees.Trainer;
 import com.kryvapust.Employees.Vet;
 
 import java.util.Collection;
-import java.util.HashSet;
-import java.util.function.Predicate;
-import java.util.stream.Collectors;
-
 
 public class FarmDogs {
     // Infrastructure
-    Aviaries aviaries;
+    private Aviaries aviaries;
     private TrainingGround trainingGround;
     private Work work;
-
     // employees
-
     private Cleaner cleaner;
     private Feeder feeder;
     private Trainer trainer;
@@ -60,6 +53,7 @@ public class FarmDogs {
         aviaries.meetDogs(trainingGround.getDogsAfterTraining());
         aviaries.meetDogs(aviaries.getRestOfDogs());
     }
+
     public void clean() {
         cleaner.startWork(aviaries.getAllDogs());
         cleaner.startWork(aviaries.getDogsForWork());

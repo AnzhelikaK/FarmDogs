@@ -21,7 +21,7 @@ public class Feeder implements Employee {
                     case OLD:
                         dog.eat(Food.FOR_OLD);
                 }
-                } else {
+            } else {
                 System.out.println(dog + " is not hungry");
             }
         }

@@ -19,7 +19,7 @@ public class Dog {
 
     public Dog(int age) {
         ++count;
-        name = "dog" + count + (char)(65 + RANDOM.nextInt(26));
+        name = "dog" + count + (char) (65 + RANDOM.nextInt(26));
         setHealthy(RANDOM.nextBoolean());
         this.age = age;
     }
